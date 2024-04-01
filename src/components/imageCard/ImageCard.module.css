@@ -1,0 +1,6 @@
+.imgThumb {
+  width: 150px;
+
+  position: relative;
+  overflow: hidden;
+}
