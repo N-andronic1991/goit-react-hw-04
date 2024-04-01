@@ -16,6 +16,6 @@ export const requestImagesByQuery = async (searchQuery = '', page = 1) => {
       },
     }
   );
-  console.log(data.results);
+  console.log(data);
   return data;
 };

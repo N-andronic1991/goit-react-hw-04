@@ -29,6 +29,7 @@ const App = () => {
         if (page !== data.total_pages) {
           loadMore;
         }
+
         setPhotos(prevPhotos => {
           return [...prevPhotos, ...data.results];
         });
