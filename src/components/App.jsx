@@ -61,7 +61,7 @@ const App = () => {
     <>
       <SearchBar onSearch={handleSearch} />
       <Toaster
-        position="top-right"
+        position="top-center"
         toastOptions={{
           className: '',
           duration: 5000,

@@ -18,15 +18,12 @@ const ImageModal = ({ showModal, setShowModal, onClose, imageUrl }) => {
       left: '50%',
       right: 'auto',
       bottom: 'auto',
-      // marginRight: '-50%',
-
       transform: 'translate(-50%, -50%)',
       overflow: 'hidden',
     },
   };
   return (
     <div>
-      {/* <button onClick={() => setShowModal(true)}>OpenModal</button> */}
       <Modal
         isOpen={showModal}
         style={customStyles}
@@ -35,7 +32,7 @@ const ImageModal = ({ showModal, setShowModal, onClose, imageUrl }) => {
         shouldCloseOnEsc={true}
       >
         <button className={css.modalBtn} onClick={onClose}>
-          X
+          x
         </button>
         <div>
           <img className={css.imageModal} src={imageUrl} alt="Large image" />
