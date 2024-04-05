@@ -1,7 +1,9 @@
 import Modal from 'react-modal';
 import css from './ImageModal.module.css';
+import PropTypes from 'prop-types';
 
 const ImageModal = ({ showModal, setShowModal, onClose, imageUrl }) => {
+  console.log(showModal, setShowModal);
   Modal.setAppElement('#root');
 
   const customStyles = {
@@ -43,3 +45,10 @@ const ImageModal = ({ showModal, setShowModal, onClose, imageUrl }) => {
 };
 
 export default ImageModal;
+
+ImageModal.proptypes = {
+  showModal: PropTypes.bool,
+  setShowModal: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+};

@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import ImageCard from '../imageCard/ImageCard';
 import css from './ImageGallery.module.css';
+import PropTypes from 'prop-types';
+
 const ImageGallery = ({ photos, onShowModal }) => {
   const endOfPhotosRef = useRef(null);
 
@@ -24,3 +26,8 @@ const ImageGallery = ({ photos, onShowModal }) => {
   );
 };
 export default ImageGallery;
+
+ImageGallery.proptypes = {
+  photos: PropTypes.arrayOf(PropTypes.shape),
+  onShowModal: PropTypes.func.isRequired,
+};

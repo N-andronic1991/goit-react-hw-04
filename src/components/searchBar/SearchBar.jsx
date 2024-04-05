@@ -1,6 +1,7 @@
 import toast from 'react-hot-toast';
 import { IoSearch } from 'react-icons/io5';
 import css from './SearchBar.module.css';
+import PropTypes from 'prop-types';
 
 const SearchBar = ({ onSearch }) => {
   const notify = () => toast('Search field cannot be empty');
@@ -37,3 +38,7 @@ const SearchBar = ({ onSearch }) => {
 };
 
 export default SearchBar;
+
+SearchBar.proptypes = {
+  onSearch: PropTypes.func.isRequired,
+};

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './ImageCard.module.css';
 const ImageCard = ({ urls, alt_description, onShowModal }) => {
   return (
@@ -11,3 +12,9 @@ const ImageCard = ({ urls, alt_description, onShowModal }) => {
   );
 };
 export default ImageCard;
+
+ImageCard.proptypes = {
+  urls: PropTypes.string,
+  alt_description: PropTypes.string.isRequired,
+  onShowModal: PropTypes.func.isRequired,
+};
