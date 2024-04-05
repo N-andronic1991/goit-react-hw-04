@@ -9,7 +9,7 @@ import { requestImagesByQuery } from '../services/api';
 import ImageModal from './imageModal/ImageModal';
 
 const App = () => {
-  const [photos, setPhotos] = useState([]);
+  const [photos, setPhotos] = useState(null);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isError, setIsError] = useState(false);
@@ -29,6 +29,7 @@ const App = () => {
         setPhotos(prevPhotos => {
           return [...prevPhotos, ...data.results];
         });
+
         setShowBtn(data.total_pages > page);
       } catch (error) {
         setIsError(true);
@@ -74,7 +75,9 @@ const App = () => {
       {loading && <Loader />}
       {isError && <ErrorMessage />}
       {photos && <ImageGallery photos={photos} onShowModal={openModal} />}
-      {photos.length !== 0 && showBtn && <LoadMoreBtn onLoadMore={loadMore} />}
+      {Array.isArray(photos) && photos.length !== 0 && showBtn && (
+        <LoadMoreBtn onLoadMore={loadMore} />
+      )}
       {selectedImgUrl && (
         <ImageModal
           showModal={showModal}
