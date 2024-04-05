@@ -1,4 +1,11 @@
 .loadMoreBtn {
   display: block;
   margin: 0 auto;
+  padding: 6px 8px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: blue;
+  color: #fff;
+  border-radius: 4px;
 }

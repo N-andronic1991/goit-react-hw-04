@@ -1,6 +1,7 @@
 import toast from 'react-hot-toast';
+import { IoSearch } from 'react-icons/io5';
+import css from './SearchBar.module.css';
 
-// https://api.unsplash.com/photos/?client_id=YOUR_ACCESS_KEY
 const SearchBar = ({ onSearch }) => {
   const notify = () => toast('Search field cannot be empty');
 
@@ -16,9 +17,10 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <header>
-      <form onSubmit={handleSubmit}>
+    <header className={css.header}>
+      <form className={css.searchContainer} onSubmit={handleSubmit}>
         <input
+          className={css.searchInput}
           type="text"
           name="query"
           autoComplete="off"
@@ -26,7 +28,9 @@ const SearchBar = ({ onSearch }) => {
           placeholder="Search images and photos"
         />
 
-        <button type="submit">Search</button>
+        <button className={css.searchBtn} type="submit">
+          <IoSearch size={20} />
+        </button>
       </form>
     </header>
   );

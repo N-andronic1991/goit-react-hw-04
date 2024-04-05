@@ -1,0 +1,13 @@
+.modalBtn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.imageModal {
+  width: 100%;
+}
