@@ -3,7 +3,6 @@ import css from './ImageModal.module.css';
 import PropTypes from 'prop-types';
 
 const ImageModal = ({ showModal, setShowModal, onClose, imageUrl }) => {
-  console.log(showModal, setShowModal);
   Modal.setAppElement('#root');
 
   const customStyles = {
