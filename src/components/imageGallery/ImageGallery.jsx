@@ -28,6 +28,10 @@ const ImageGallery = ({ photos, onShowModal }) => {
 export default ImageGallery;
 
 ImageGallery.proptypes = {
-  photos: PropTypes.arrayOf(PropTypes.shape),
+  photos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
+  ),
   onShowModal: PropTypes.func.isRequired,
 };

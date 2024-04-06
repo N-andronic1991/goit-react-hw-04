@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import css from './ImageCard.module.css';
+
 const ImageCard = ({ urls, alt_description, onShowModal }) => {
   return (
-    <div className={css.imgThumb}>
+    <div>
       <img
         onClick={() => onShowModal(urls.regular)}
         src={urls.small}
@@ -14,7 +14,10 @@ const ImageCard = ({ urls, alt_description, onShowModal }) => {
 export default ImageCard;
 
 ImageCard.proptypes = {
-  urls: PropTypes.string,
+  urls: PropTypes.exact({
+    small: PropTypes.string.isRequired,
+    regular: PropTypes.string.isRequired,
+  }),
   alt_description: PropTypes.string.isRequired,
   onShowModal: PropTypes.func.isRequired,
 };
